@@ -28,6 +28,14 @@ submitButton.click(function (e) {
 	makeGrid();
 });
 
+ //If the user clicks or moves the mouse in the grid
+  //while holding the left mouse button down draw the pixels
+  table.on("mousemove", "td", function(e) {
+    if (e.buttons == 1) {
+      $(this).css("background-color", color); //Draw the td that the user hovers
+    }
+  });
+
 //apllying the color selcted by the user to the td when clicked
 table.on(" click ", "td", function () {
 	$(this).css("background-color", color);
